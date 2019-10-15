@@ -1,10 +1,10 @@
 # I'm Feeling Lucky Search
 
-Go to the first Google result from Chrome omnibox.
+Go to the first Google result from the Chrome omnibox.
 
 ## Usage
 
-The keyword to search from the omnibox is `i`.
+The default keyword to search from the omnibox is `i`.
 
 This can be changed from `chrome://settings/searchEngines`.
 
