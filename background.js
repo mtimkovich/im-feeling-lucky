@@ -7,13 +7,8 @@ chrome.omnibox.onInputEntered.addListener(text => {
 /** Skips past the "Redirect Notice". */
 function ignoreRedirectNotice() {
   chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    if (!changeInfo.url) {
-      return;
-    }
-
     const redirect = 'https://www.google.com/url?q=';
-    if (!tab.url.startsWith(redirect)) {
-      chrome.tabs.onUpdated.removeListener(ignoreRedirectNotice);
+    if (!changeInfo.url || !tab.url.startsWith(redirect)) {
       return;
     }
 
