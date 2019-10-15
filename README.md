@@ -1,6 +1,7 @@
 # I'm Feeling Lucky Search
 
-Go to the first Google result from the Chrome omnibox.
+Go to the first Google result from the Chrome omnibox. It also skips past the
+"Redirect Notice" page automatically.
 
 ## Usage
 
