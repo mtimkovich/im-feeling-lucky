@@ -4,11 +4,16 @@ chrome.omnibox.onInputEntered.addListener(text => {
   }, ignoreRedirectNotice)
 });
 
+/** Skips past the "Redirect Notice". */
 function ignoreRedirectNotice() {
   chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    // Skip past the "Redirect Notice".
+    if (!changeInfo.url) {
+      return;
+    }
+
     const redirect = 'https://www.google.com/url?q=';
-    if (!changeInfo.url || !tab.url.startsWith(redirect)) {
+    if (!tab.url.startsWith(redirect)) {
+      chrome.tabs.onUpdated.removeListener(ignoreRedirectNotice);
       return;
     }
 
