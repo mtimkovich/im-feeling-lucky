@@ -1,0 +1,20 @@
+{
+    "name": "I'm Feeling Lucky",
+    "version": "1.0",
+    "description": "Are you feeling it now, Mr. Krabs?",
+    "omnibox": {
+        "keyword": "i"
+    },
+    "icons": {
+        "48": "shamrock-48.png",
+        "128": "shamrock-128.png"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "activeTab"
+    ],
+    "manifest_version": 2
+}
